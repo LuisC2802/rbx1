@@ -71,14 +71,33 @@ user@user-X427LKG:~$ rostopic list
 /tf_static
 /cmd_vel
 ```
-Now, in another terminal we run the turtlesim_node:
+Now, in another terminal we run the turtle_teleop_key:
 ```
-$ rosrun turtlesim turtlesim_node
+rosrun turtlesim turtle_teleop_key
+```
+After run the launch, in another terminal we review the executing topics with:
+```
+rostopic list
+```
+You should see something similar to:
+```
+user@user-X427LKG:~$ rostopic list
+/diagnostics
+/joint_states
+/odom
+/rosout
+/rosout_agg
+/tf
+/tf_static
+/cmd_vel
+/turtle1/cmd_vel
 ```
 # Remap
+As you can see, /cmd_vel and /turtle1/cmd_vel topics corresponds to fake_turtlebot.launch of rbx1 arbotix package and turtle_teleop_key of turtlesim package respectively. To allow the communication between them, in the fake_turtlebot.launch, you should remap the topic adding:
 ```
 <remap from="/cmd_vel" to="/turtle1/cmd_vel"/>
 ```
+The fake_turtlebot.launch should be:
 ```
 <launch>
   <param name="/use_sim_time" value="false" />
@@ -100,3 +119,4 @@ $ rosrun turtlesim turtlesim_node
 
 </launch>
 ```
+# Execution
