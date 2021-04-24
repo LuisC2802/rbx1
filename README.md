@@ -1,7 +1,7 @@
 # RBX1
 
 # Introduction
-In this project the communication between the rbx1 package and the ROS environment will be made, through the same topic, using the remap function in the fake_turtlebot.launch  file to let the robot control by keyboard.
+In this project the communication between the rbx1 package and the ROS environment will be made, through the same topic, using the remap function in the fake_turtlebot.launch  file to allow the robot speed control.
 
 # Install RBX1 repository
 In a terminal, first go to your <catkin_ws> source folder. Write:
@@ -120,3 +120,7 @@ The fake_turtlebot.launch should be:
 </launch>
 ```
 # Execution
+Finally you should execute the fake_turtlebot.launch again. (see **Remap**). To graphic validation run:
+```
+rqt_graph
+```
