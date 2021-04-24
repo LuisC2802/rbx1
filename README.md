@@ -27,7 +27,7 @@ roscore
 ```
 You should see something similar to:
 ```
-... logging to /home/luisc/.ros/log/00dd2b82-a49c-11eb-87a4-0025d3d70f40/roslaunch-luisc-X441UVK-5298.log
+... logging to /home/user/.ros/log/00dd2b82-a49c-11eb-87a4-0025d3d70f40/roslaunch-user-X427LKG-5298.log
 Checking log directory for disk usage. This may take awhile.
 Press Ctrl-C to interrupt
 
@@ -59,7 +59,22 @@ After run the launch, in another terminal we review the executing topics with:
 ```
 rostopic list
 ```
-
+You should see something similar to:
+```
+user@user-X427LKG:~$ rostopic list
+/diagnostics
+/joint_states
+/odom
+/rosout
+/rosout_agg
+/tf
+/tf_static
+/cmd_vel
+```
+Now, in another terminal we run the turtlesim_node:
+```
+$ rosrun turtlesim turtlesim_node
+```
 # Remap
 ```
 <remap from="/cmd_vel" to="/turtle1/cmd_vel"/>
