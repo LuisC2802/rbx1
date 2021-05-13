@@ -4,15 +4,15 @@
 In this project the communication between the rbx1 package and the ROS environment will be made, through the same topic, using the remap function in the fake_turtlebot.launch  file to allow the robot speed control.
 
 # Install RBX1 repository
-In a terminal, first go to your <catkin_ws> source folder. Write:
+In a terminal, first, go to your <catkin_ws> source folder. Write:
 ```
 cd ~/<catkin_ws>/src
 ```
-Then, copy the RBX1 repository from author's github:
+Then, copy the RBX1 repository from the author's GitHub:
 ```
 git clone https://github.com/pirobot/rbx1.git
 ```
-Or you can install directly from ROS repository:
+Or you can install directly from the ROS repository:
 ```
 sudo apt-get install ros-<distro>-rbx1
 ```
@@ -21,7 +21,7 @@ if you get any trouble, try installing ROS dependencies:
 sudo apt-get install python-rosinstall
 ```
 # Topics identification
-First, in a terminal, you should run the ROS environmetn with:
+First, in a terminal, you should run the ROS environment with:
 ```
 roscore
 ```
@@ -55,7 +55,7 @@ In another terminal, you should run the fake_turtlebot.launch using:
 ```
 roslaunch rbx1_bringup fake_turtlebot.launch
 ```
-After run the launch, in another terminal we review the executing topics with:
+After running the launch, in another terminal, we review the executing topics with:
 ```
 rostopic list
 ```
@@ -75,7 +75,7 @@ Now, in another terminal we run the turtle_teleop_key:
 ```
 rosrun turtlesim turtle_teleop_key
 ```
-After run the launch, in another terminal we review the executing topics with:
+After running the launch, in another terminal, we review the executing topics with:
 ```
 rostopic list
 ```
@@ -93,7 +93,7 @@ user@user-X427LKG:~$ rostopic list
 /turtle1/cmd_vel
 ```
 # Remap
-As you can see, /cmd_vel and /turtle1/cmd_vel topics corresponds to fake_turtlebot.launch of rbx1 arbotix package and turtle_teleop_key of turtlesim package respectively. To allow the communication between them, in the fake_turtlebot.launch, you should remap the topic adding:
+As you can see, /cmd_vel and /turtle1/cmd_vel topics corresponds to fake_turtlebot.launch of rbx1 Arbotix package and turtle_teleop_key of turtlesim package respectively. To allow the communication between them, in the fake_turtlebot.launch, you should remap the topic adding:
 ```
 <remap from="/cmd_vel" to="/turtle1/cmd_vel"/>
 ```
@@ -120,7 +120,7 @@ The fake_turtlebot.launch should be:
 </launch>
 ```
 # Execution
-Finally you should execute the fake_turtlebot.launch again. (see **Remap**). To graphic validation run:
+Finally, you should execute the fake_turtlebot.launch again. (see **Remap**). To graphic validation run:
 ```
 rqt_graph
 ```
