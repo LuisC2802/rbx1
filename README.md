@@ -124,3 +124,9 @@ Finally, you should execute the fake_turtlebot.launch again. (see **Remap**). To
 ```
 rqt_graph
 ```
+# Developed by: 
+- Luis Carlos Parra Camacho
+- Juan Andrés Alzate Ocampo
+- Andrés Fernando Rodríguez Bayona
+- Amy Alexandra Noriega Quintero
+- David Fernando Estacio Quiroz.
